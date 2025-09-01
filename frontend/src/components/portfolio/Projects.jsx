@@ -50,7 +50,7 @@ const Projects = () => {
                 <button
                   key={category}
                   onClick={() => setSelectedFilter(category)}
-                  className={`px4 py-2 rounded-full font-medium transition-all duration-300 ${
+                  className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
                     selectedFilter === category
                       ? 'bg-gradient-to-r from-emerald-500 to-green-500 text-slate-900 scale-105'
                       : 'bg-slate-700 text-slate-300 border border-emerald-500/30 hover:border-emerald-400/50 hover:text-emerald-300'
