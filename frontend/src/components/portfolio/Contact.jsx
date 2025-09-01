@@ -33,16 +33,16 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#1a1c1b]">
+    <section id="contact" className="py-24 bg-gradient-to-b from-slate-800 to-slate-900">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="heading-2 text-[#d9fb06] font-black uppercase mb-4">
+            <h2 className="text-5xl md:text-6xl font-black uppercase mb-4 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-400">
               Let's Connect
             </h2>
-            <div className="w-24 h-1 bg-[#d9fb06] mx-auto mb-8" />
-            <p className="body-medium text-[#888680] max-w-2xl mx-auto">
+            <div className="w-24 h-1 bg-gradient-to-r from-emerald-400 to-green-400 mx-auto mb-8" />
+            <p className="text-xl text-slate-300 max-w-2xl mx-auto">
               Ready to discuss your next Android project or explore collaboration opportunities? I'd love to hear from you.
             </p>
           </div>
@@ -52,21 +52,21 @@ const Contact = () => {
             <div className="space-y-8">
               {/* Contact Details */}
               <div>
-                <h3 className="heading-4 text-[#d9fb06] mb-8 uppercase tracking-wide">
+                <h3 className="text-2xl font-semibold text-emerald-400 mb-8 uppercase tracking-wide">
                   Get In Touch
                 </h3>
                 
                 <div className="space-y-6">
                   {/* Email */}
                   <div className="flex items-center space-x-4 group">
-                    <div className="w-14 h-14 bg-[#302f2c] rounded-lg flex items-center justify-center border border-[#3f4816]/50 group-hover:border-[#d9fb06]/50 transition-colors duration-300">
-                      <Mail size={24} className="text-[#d9fb06]" />
+                    <div className="w-14 h-14 bg-gradient-to-br from-slate-700 to-slate-800 rounded-lg flex items-center justify-center border border-emerald-500/30 group-hover:border-emerald-400/50 transition-colors duration-300">
+                      <Mail size={24} className="text-emerald-400" />
                     </div>
                     <div>
-                      <h4 className="heading-6 text-[#d9fb06] mb-1 uppercase">Email</h4>
+                      <h4 className="text-lg font-semibold text-emerald-400 mb-1 uppercase">Email</h4>
                       <a 
                         href={`mailto:${personalInfo.email}`}
-                        className="body-small text-[#888680] hover:text-[#d9fb06] transition-colors duration-300"
+                        className="text-slate-300 hover:text-emerald-400 transition-colors duration-300"
                       >
                         {personalInfo.email}
                       </a>
@@ -75,14 +75,14 @@ const Contact = () => {
 
                   {/* Phone */}
                   <div className="flex items-center space-x-4 group">
-                    <div className="w-14 h-14 bg-[#302f2c] rounded-lg flex items-center justify-center border border-[#3f4816]/50 group-hover:border-[#d9fb06]/50 transition-colors duration-300">
-                      <Phone size={24} className="text-[#d9fb06]" />
+                    <div className="w-14 h-14 bg-gradient-to-br from-slate-700 to-slate-800 rounded-lg flex items-center justify-center border border-emerald-500/30 group-hover:border-emerald-400/50 transition-colors duration-300">
+                      <Phone size={24} className="text-emerald-400" />
                     </div>
                     <div>
-                      <h4 className="heading-6 text-[#d9fb06] mb-1 uppercase">Phone</h4>
+                      <h4 className="text-lg font-semibold text-emerald-400 mb-1 uppercase">Phone</h4>
                       <a 
                         href={`tel:${personalInfo.phone}`}
-                        className="body-small text-[#888680] hover:text-[#d9fb06] transition-colors duration-300"
+                        className="text-slate-300 hover:text-emerald-400 transition-colors duration-300"
                       >
                         {personalInfo.phone}
                       </a>
@@ -91,12 +91,12 @@ const Contact = () => {
 
                   {/* Location */}
                   <div className="flex items-center space-x-4 group">
-                    <div className="w-14 h-14 bg-[#302f2c] rounded-lg flex items-center justify-center border border-[#3f4816]/50 group-hover:border-[#d9fb06]/50 transition-colors duration-300">
-                      <MapPin size={24} className="text-[#d9fb06]" />
+                    <div className="w-14 h-14 bg-gradient-to-br from-slate-700 to-slate-800 rounded-lg flex items-center justify-center border border-emerald-500/30 group-hover:border-emerald-400/50 transition-colors duration-300">
+                      <MapPin size={24} className="text-emerald-400" />
                     </div>
                     <div>
-                      <h4 className="heading-6 text-[#d9fb06] mb-1 uppercase">Location</h4>
-                      <p className="body-small text-[#888680]">{personalInfo.location}</p>
+                      <h4 className="text-lg font-semibold text-emerald-400 mb-1 uppercase">Location</h4>
+                      <p className="text-slate-300">{personalInfo.location}</p>
                     </div>
                   </div>
                 </div>
@@ -104,7 +104,7 @@ const Contact = () => {
 
               {/* Social Links */}
               <div>
-                <h3 className="heading-4 text-[#d9fb06] mb-6 uppercase tracking-wide">
+                <h3 className="text-2xl font-semibold text-emerald-400 mb-6 uppercase tracking-wide">
                   Follow Me
                 </h3>
                 
@@ -113,30 +113,30 @@ const Contact = () => {
                     href={personalInfo.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-14 h-14 bg-[#302f2c] rounded-lg flex items-center justify-center border border-[#3f4816]/50 hover:border-[#d9fb06]/50 hover:bg-[#d9fb06]/10 transition-all duration-300 group"
+                    className="w-14 h-14 bg-gradient-to-br from-slate-700 to-slate-800 rounded-lg flex items-center justify-center border border-emerald-500/30 hover:border-emerald-400/50 hover:bg-emerald-500/10 transition-all duration-300 group"
                   >
-                    <Github size={24} className="text-[#d9fb06] group-hover:scale-110 transition-transform duration-300" />
+                    <Github size={24} className="text-emerald-400 group-hover:scale-110 transition-transform duration-300" />
                   </a>
                   <a
                     href={personalInfo.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-14 h-14 bg-[#302f2c] rounded-lg flex items-center justify-center border border-[#3f4816]/50 hover:border-[#d9fb06]/50 hover:bg-[#d9fb06]/10 transition-all duration-300 group"
+                    className="w-14 h-14 bg-gradient-to-br from-slate-700 to-slate-800 rounded-lg flex items-center justify-center border border-emerald-500/30 hover:border-emerald-400/50 hover:bg-emerald-500/10 transition-all duration-300 group"
                   >
-                    <Linkedin size={24} className="text-[#d9fb06] group-hover:scale-110 transition-transform duration-300" />
+                    <Linkedin size={24} className="text-emerald-400 group-hover:scale-110 transition-transform duration-300" />
                   </a>
                 </div>
               </div>
 
               {/* Availability Status */}
-              <div className="bg-[#302f2c] rounded-2xl p-6 border border-[#3f4816]/50">
+              <div className="bg-gradient-to-r from-slate-700 to-slate-800 rounded-2xl p-6 border border-emerald-500/30">
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-3 h-3 bg-[#d9fb06] rounded-full animate-pulse" />
-                  <h4 className="heading-6 text-[#d9fb06] uppercase tracking-wide">
+                  <div className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse" />
+                  <h4 className="text-lg font-semibold text-emerald-400 uppercase tracking-wide">
                     Currently Available
                   </h4>
                 </div>
-                <p className="body-small text-[#888680] leading-relaxed">
+                <p className="text-slate-300 leading-relaxed">
                   I'm actively seeking new opportunities and exciting Android development projects. 
                   Whether you're looking for a technical lead, senior developer, or consultant, 
                   I'd love to discuss how I can contribute to your team's success.
@@ -146,15 +146,15 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div>
-              <h3 className="heading-4 text-[#d9fb06] mb-8 uppercase tracking-wide">
+              <h3 className="text-2xl font-semibold text-emerald-400 mb-8 uppercase tracking-wide">
                 Send a Message
               </h3>
 
               {/* Success Message */}
               {isSubmitted && (
-                <div className="bg-[#d9fb06]/10 border border-[#d9fb06]/30 rounded-lg p-4 mb-6 flex items-center space-x-3">
-                  <CheckCircle size={20} className="text-[#d9fb06]" />
-                  <p className="body-small text-[#d9fb06]">
+                <div className="bg-emerald-500/10 border border-emerald-400/30 rounded-lg p-4 mb-6 flex items-center space-x-3">
+                  <CheckCircle size={20} className="text-emerald-400" />
+                  <p className="text-emerald-400">
                     Thank you for your message! I'll get back to you within 24 hours.
                   </p>
                 </div>
@@ -163,7 +163,7 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name */}
                 <div>
-                  <label htmlFor="name" className="block heading-6 text-[#d9fb06] mb-2 uppercase tracking-wide">
+                  <label htmlFor="name" className="block text-lg font-semibold text-emerald-400 mb-2 uppercase tracking-wide">
                     Name *
                   </label>
                   <input
@@ -173,14 +173,14 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-[#302f2c] border border-[#3f4816]/50 rounded-lg text-[#d9fb06] placeholder-[#888680] focus:border-[#d9fb06]/50 focus:outline-none transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-slate-700 border border-emerald-500/30 rounded-lg text-emerald-100 placeholder-slate-400 focus:border-emerald-400/50 focus:outline-none transition-colors duration-300"
                     placeholder="Your full name"
                   />
                 </div>
 
                 {/* Email */}
                 <div>
-                  <label htmlFor="email" className="block heading-6 text-[#d9fb06] mb-2 uppercase tracking-wide">
+                  <label htmlFor="email" className="block text-lg font-semibold text-emerald-400 mb-2 uppercase tracking-wide">
                     Email *
                   </label>
                   <input
@@ -190,14 +190,14 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-[#302f2c] border border-[#3f4816]/50 rounded-lg text-[#d9fb06] placeholder-[#888680] focus:border-[#d9fb06]/50 focus:outline-none transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-slate-700 border border-emerald-500/30 rounded-lg text-emerald-100 placeholder-slate-400 focus:border-emerald-400/50 focus:outline-none transition-colors duration-300"
                     placeholder="your.email@example.com"
                   />
                 </div>
 
                 {/* Subject */}
                 <div>
-                  <label htmlFor="subject" className="block heading-6 text-[#d9fb06] mb-2 uppercase tracking-wide">
+                  <label htmlFor="subject" className="block text-lg font-semibold text-emerald-400 mb-2 uppercase tracking-wide">
                     Subject *
                   </label>
                   <input
@@ -207,14 +207,14 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-[#302f2c] border border-[#3f4816]/50 rounded-lg text-[#d9fb06] placeholder-[#888680] focus:border-[#d9fb06]/50 focus:outline-none transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-slate-700 border border-emerald-500/30 rounded-lg text-emerald-100 placeholder-slate-400 focus:border-emerald-400/50 focus:outline-none transition-colors duration-300"
                     placeholder="What's this about?"
                   />
                 </div>
 
                 {/* Message */}
                 <div>
-                  <label htmlFor="message" className="block heading-6 text-[#d9fb06] mb-2 uppercase tracking-wide">
+                  <label htmlFor="message" className="block text-lg font-semibold text-emerald-400 mb-2 uppercase tracking-wide">
                     Message *
                   </label>
                   <textarea
@@ -224,7 +224,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 bg-[#302f2c] border border-[#3f4816]/50 rounded-lg text-[#d9fb06] placeholder-[#888680] focus:border-[#d9fb06]/50 focus:outline-none transition-colors duration-300 resize-vertical"
+                    className="w-full px-4 py-3 bg-slate-700 border border-emerald-500/30 rounded-lg text-emerald-100 placeholder-slate-400 focus:border-emerald-400/50 focus:outline-none transition-colors duration-300 resize-vertical"
                     placeholder="Tell me about your project, requirements, or any questions you have..."
                   />
                 </div>
@@ -233,11 +233,11 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full btn-primary bg-[#d9fb06] text-[#1a1c1b] px-8 py-4 rounded-full font-semibold uppercase tracking-wide hover:scale-105 transition-transform duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="w-full bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600 text-slate-900 px-8 py-4 rounded-full font-semibold uppercase tracking-wide hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-lg hover:shadow-emerald-500/25"
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="w-5 h-5 border-2 border-[#1a1c1b]/30 border-t-[#1a1c1b] rounded-full animate-spin" />
+                      <div className="w-5 h-5 border-2 border-slate-900/30 border-t-slate-900 rounded-full animate-spin" />
                       <span>Sending...</span>
                     </>
                   ) : (
@@ -250,14 +250,14 @@ const Contact = () => {
               </form>
 
               {/* Contact Info Note */}
-              <div className="mt-8 p-4 bg-[#302f2c]/50 rounded-lg border border-[#3f4816]/30">
-                <p className="body-small text-[#888680] text-center">
+              <div className="mt-8 p-4 bg-slate-700/50 rounded-lg border border-emerald-500/20">
+                <p className="text-slate-300 text-center">
                   Prefer direct communication? Feel free to reach out via{' '}
-                  <a href={`mailto:${personalInfo.email}`} className="text-[#d9fb06] hover:underline">
+                  <a href={`mailto:${personalInfo.email}`} className="text-emerald-400 hover:underline">
                     email
                   </a>
                   {' '}or{' '}
-                  <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="text-[#d9fb06] hover:underline">
+                  <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
                     LinkedIn
                   </a>
                 </p>
