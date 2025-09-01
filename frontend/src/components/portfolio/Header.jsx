@@ -34,17 +34,17 @@ const Header = () => {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-[#1a1c1b]/95 backdrop-blur-sm border-b border-[#3f4816]/50' : 'bg-transparent'
+        isScrolled ? 'bg-slate-900/95 backdrop-blur-sm border-b border-emerald-500/30' : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div 
-            className="text-[#d9fb06] font-bold text-xl cursor-pointer"
+            className="text-emerald-400 font-bold text-xl cursor-pointer font-mono"
             onClick={() => scrollToSection('home')}
           >
-            ZI
+            &lt;ZI /&gt;
           </div>
 
           {/* Desktop Navigation */}
@@ -53,7 +53,7 @@ const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="nav-link text-[#d9fb06] hover:text-[#d9fb06]/80 transition-colors duration-300"
+                className="text-emerald-300 hover:text-emerald-400 transition-colors duration-300 font-medium"
               >
                 {item.label}
               </button>
@@ -66,7 +66,7 @@ const Header = () => {
               href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#d9fb06] hover:text-[#d9fb06]/80 transition-colors duration-300"
+              className="text-emerald-300 hover:text-emerald-400 transition-colors duration-300"
             >
               <Github size={20} />
             </a>
@@ -74,13 +74,13 @@ const Header = () => {
               href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#d9fb06] hover:text-[#d9fb06]/80 transition-colors duration-300"
+              className="text-emerald-300 hover:text-emerald-400 transition-colors duration-300"
             >
               <Linkedin size={20} />
             </a>
             <a
               href={`mailto:${personalInfo.email}`}
-              className="text-[#d9fb06] hover:text-[#d9fb06]/80 transition-colors duration-300"
+              className="text-emerald-300 hover:text-emerald-400 transition-colors duration-300"
             >
               <Mail size={20} />
             </a>
@@ -88,7 +88,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-[#d9fb06] hover:text-[#d9fb06]/80 transition-colors duration-300"
+            className="md:hidden text-emerald-400 hover:text-emerald-300 transition-colors duration-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -97,13 +97,13 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-[#3f4816]/50">
+          <div className="md:hidden mt-4 pb-4 border-t border-emerald-500/30">
             <nav className="flex flex-col space-y-4 mt-4">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="nav-link text-[#d9fb06] hover:text-[#d9fb06]/80 transition-colors duration-300 text-left"
+                  className="text-emerald-300 hover:text-emerald-400 transition-colors duration-300 text-left font-medium"
                 >
                   {item.label}
                 </button>
@@ -116,7 +116,7 @@ const Header = () => {
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#d9fb06] hover:text-[#d9fb06]/80 transition-colors duration-300"
+                className="text-emerald-300 hover:text-emerald-400 transition-colors duration-300"
               >
                 <Github size={20} />
               </a>
@@ -124,13 +124,13 @@ const Header = () => {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#d9fb06] hover:text-[#d9fb06]/80 transition-colors duration-300"
+                className="text-emerald-300 hover:text-emerald-400 transition-colors duration-300"
               >
                 <Linkedin size={20} />
               </a>
               <a
                 href={`mailto:${personalInfo.email}`}
-                className="text-[#d9fb06] hover:text-[#d9fb06]/80 transition-colors duration-300"
+                className="text-emerald-300 hover:text-emerald-400 transition-colors duration-300"
               >
                 <Mail size={20} />
               </a>

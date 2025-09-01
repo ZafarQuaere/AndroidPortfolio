@@ -9,7 +9,8 @@ export const personalInfo = {
   linkedin: "https://www.linkedin.com/in/zafarimam77/",
   github: "https://github.com/ZafarQuaere/",
   location: "Delhi, India",
-  profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+  androidLogo: "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwxfHxhbmRyb2lkJTIwbG9nb3xlbnwwfHx8fDE3NTY3NDkxMDV8MA&ixlib=rb-4.1.0&q=85",
+  developmentBg: "https://images.unsplash.com/photo-1604536264507-020ce894daf1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBwcm9ncmFtbWluZ3xlbnwwfHx8fDE3NTY3NDkxMTB8MA&ixlib=rb-4.1.0&q=85"
 };
 
 export const aboutMe = {
