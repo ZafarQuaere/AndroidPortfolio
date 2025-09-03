@@ -256,7 +256,11 @@ const Contact = () => {
                   <a href={`mailto:${personalInfo.email}`} className="text-emerald-400 hover:underline">
                     email
                   </a>
-                  {' '}or{' '}
+                  {', '}
+                  <a href={`tel:${personalInfo.phone}`} className="text-emerald-400 hover:underline">
+                    mobile
+                  </a>
+                  {', or '}
                   <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
                     LinkedIn
                   </a>
