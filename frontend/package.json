@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "android-portfolio-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -57,7 +57,11 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test"
+    "test": "craco test",
+    "lint": "eslint src --ext .js,.jsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint src --ext .js,.jsx --fix",
+    "format": "prettier --write src/**/*.{js,jsx,css,md,json}",
+    "format:check": "prettier --check src/**/*.{js,jsx,css,md,json}"
   },
   "browserslist": {
     "production": [
@@ -81,6 +85,7 @@
     "eslint-plugin-react": "7.37.4",
     "globals": "15.15.0",
     "postcss": "^8.4.49",
+    "prettier": "^3.2.5",
     "tailwindcss": "^3.4.17"
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
