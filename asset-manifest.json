@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/android-portfolio-frontend/static/css/main.291d7fe0.css",
+    "main.js": "/android-portfolio-frontend/static/js/main.e5d46ac9.js",
+    "index.html": "/android-portfolio-frontend/index.html",
+    "main.291d7fe0.css.map": "/android-portfolio-frontend/static/css/main.291d7fe0.css.map",
+    "main.e5d46ac9.js.map": "/android-portfolio-frontend/static/js/main.e5d46ac9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.291d7fe0.css",
+    "static/js/main.e5d46ac9.js"
+  ]
+}
