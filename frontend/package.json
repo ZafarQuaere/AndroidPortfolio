@@ -2,7 +2,7 @@
   "name": "android-portfolio-frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://portfolio.zafarimam.com",
+  "homepage": "https://zafarquaere.github.io/AndroidPortfolio",
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@hookform/resolvers": "^5.0.1",
