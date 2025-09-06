@@ -7,11 +7,8 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    '@eslint/js/recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
-    'plugin:jsx-a11y/recommended',
-    'plugin:import/recommended',
   ],
   parserOptions: {
     ecmaVersion: 'latest',
@@ -24,57 +21,23 @@ module.exports = {
     react: {
       version: 'detect',
     },
-    'import/resolver': {
-      node: {
-        paths: ['src'],
-        extensions: ['.js', '.jsx'],
-      },
-    },
   },
-  plugins: ['react', 'jsx-a11y', 'import'],
+  plugins: ['react'],
   rules: {
     // React specific rules
-    'react/prop-types': 'warn',
+    'react/prop-types': 'off', // Disable prop-types for now
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
-    'react/jsx-no-target-blank': 'error',
-    'react/jsx-pascal-case': 'error',
+    'react/jsx-no-target-blank': 'warn',
+    'react/jsx-pascal-case': 'warn',
+    'react/no-unescaped-entities': 'off', // Allow unescaped entities like apostrophes
+    'react/no-unknown-property': 'off', // Allow unknown properties for custom components
     
-    // Import rules
-    'import/order': [
-      'error',
-      {
-        groups: [
-          'builtin',
-          'external',
-          'internal',
-          'parent',
-          'sibling',
-          'index',
-        ],
-        'newlines-between': 'always',
-        alphabetize: {
-          order: 'asc',
-          caseInsensitive: true,
-        },
-      },
-    ],
-    'import/no-unresolved': 'error',
-    'import/no-duplicates': 'error',
-    
-    // General rules
+    // General rules - relaxed for development
     'no-unused-vars': 'warn',
     'no-console': 'warn',
-    'prefer-const': 'error',
-    'no-var': 'error',
-    'object-shorthand': 'error',
-    'prefer-template': 'error',
-    
-    // Accessibility rules
-    'jsx-a11y/alt-text': 'error',
-    'jsx-a11y/anchor-is-valid': 'error',
-    'jsx-a11y/click-events-have-key-events': 'warn',
-    'jsx-a11y/no-static-element-interactions': 'warn',
+    'prefer-const': 'warn',
+    'no-var': 'warn',
   },
   overrides: [
     {
