@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Github, Linkedin, Send, CheckCircle } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Mail, Phone, MapPin, Github, Linkedin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { personalInfo } from '../../data/mock';
+import { initEmailJS, sendEmail } from '../../lib/emailjs';
+import { debugEmailJS } from '../../lib/emailjs-debug';
+import EmailJSTroubleshooter from './EmailJSTroubleshooter';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,25 +14,55 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+  const [showTroubleshooter, setShowTroubleshooter] = useState(false);
+
+  // Initialize EmailJS on component mount
+  useEffect(() => {
+    initEmailJS();
+    // Add debug function to window for testing
+    window.debugEmailJS = debugEmailJS;
+    console.log('💡 Tip: Run debugEmailJS() in console to test EmailJS configuration');
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+    // Clear any previous errors when user starts typing
+    if (submitError) setSubmitError('');
   };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError('');
     
-    // Simulate form submission (since this is frontend-only with mock data)
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      console.log('Form submission started with data:', formData);
+      
+      // Send email using EmailJS
+      await sendEmail(formData);
+      
+      // Success - show success message and reset form
       setIsSubmitted(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
       
       // Reset success message after 5 seconds
       setTimeout(() => setIsSubmitted(false), 5000);
-    }, 1500);
+      
+    } catch (error) {
+      console.error('Form submission failed:', error);
+      
+      // Use the specific error message from EmailJS
+      const errorMessage = error.message || 'Failed to send message. Please try again or contact me directly.';
+      setSubmitError(errorMessage);
+      
+      // Clear error after 10 seconds
+      setTimeout(() => setSubmitError(''), 10000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -160,6 +193,25 @@ const Contact = () => {
                 </div>
               )}
 
+              {/* Error Message */}
+              {submitError && (
+                <div className="bg-red-500/10 border border-red-400/30 rounded-lg p-4 mb-6">
+                  <div className="flex items-center space-x-3 mb-3">
+                    <Mail size={20} className="text-red-400" />
+                    <p className="text-red-400">
+                      {submitError}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => setShowTroubleshooter(true)}
+                    className="flex items-center space-x-2 text-emerald-400 hover:text-emerald-300 transition-colors text-sm"
+                  >
+                    <AlertCircle size={16} />
+                    <span>Run troubleshooter</span>
+                  </button>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name */}
                 <div>
@@ -270,6 +322,11 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      {/* Troubleshooter Modal */}
+      {showTroubleshooter && (
+        <EmailJSTroubleshooter onClose={() => setShowTroubleshooter(false)} />
+      )}
     </section>
   );
 };
