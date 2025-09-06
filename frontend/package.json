@@ -1,8 +1,9 @@
 {
-  "name": "frontend",
+  "name": "android-portfolio-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@hookform/resolvers": "^5.0.1",
     "@radix-ui/react-accordion": "^1.2.8",
     "@radix-ui/react-alert-dialog": "^1.1.11",
@@ -55,9 +56,13 @@
     "zod": "^3.24.4"
   },
   "scripts": {
-    "start": "craco start",
+    "start": "ESLINT_NO_DEV_ERRORS=true craco start",
     "build": "craco build",
-    "test": "craco test"
+    "test": "craco test",
+    "lint": "eslint src --ext .js,.jsx --report-unused-disable-directives",
+    "lint:fix": "eslint src --ext .js,.jsx --fix",
+    "format": "prettier --write src/**/*.{js,jsx,css,md,json}",
+    "format:check": "prettier --check src/**/*.{js,jsx,css,md,json}"
   },
   "browserslist": {
     "production": [
@@ -73,14 +78,14 @@
   },
   "devDependencies": {
     "@craco/craco": "^7.1.0",
-    "@eslint/js": "9.23.0",
     "autoprefixer": "^10.4.20",
-    "eslint": "9.23.0",
+    "eslint": "^8.57.0",
+    "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-react": "7.37.4",
-    "globals": "15.15.0",
     "postcss": "^8.4.49",
+    "prettier": "^3.2.5",
     "tailwindcss": "^3.4.17"
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
