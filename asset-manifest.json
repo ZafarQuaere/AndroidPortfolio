@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/AndroidPortfolio/static/css/main.291d7fe0.css",
-    "main.js": "/AndroidPortfolio/static/js/main.58a48e43.js",
+    "main.js": "/AndroidPortfolio/static/js/main.43e4893a.js",
     "index.html": "/AndroidPortfolio/index.html",
     "main.291d7fe0.css.map": "/AndroidPortfolio/static/css/main.291d7fe0.css.map",
-    "main.58a48e43.js.map": "/AndroidPortfolio/static/js/main.58a48e43.js.map"
+    "main.43e4893a.js.map": "/AndroidPortfolio/static/js/main.43e4893a.js.map"
   },
   "entrypoints": [
     "static/css/main.291d7fe0.css",
-    "static/js/main.58a48e43.js"
+    "static/js/main.43e4893a.js"
   ]
 }
