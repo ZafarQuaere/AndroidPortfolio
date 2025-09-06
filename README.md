@@ -1,6 +1,6 @@
-# AndroidPortfolio – React + FastAPI + MongoDB
+# AndroidPortfolio – React Portfolio Application
 
-A full‑stack portfolio web application with a modern React frontend and a FastAPI backend backed by MongoDB. The frontend renders a personal portfolio (hero, about, skills, experience, projects, contact). The backend exposes simple status endpoints to demonstrate persistence, telemetry, or future integrations (e.g., contact form submissions).
+A modern, responsive portfolio web application built with React. The application showcases a personal portfolio with sections for hero, about, skills, experience, projects, and contact information. Built with modern React practices and a beautiful UI component library.
 
 ## Table of Contents
 - Overview
@@ -8,43 +8,45 @@ A full‑stack portfolio web application with a modern React frontend and a Fast
 - Project Structure
 - Prerequisites
 - Quick Start
-- Backend Setup (FastAPI + MongoDB)
 - Frontend Setup (React + CRACO + Tailwind)
-- Start Locally (Detailed)
-- API Reference
-- Frontend ↔ Backend Integration (optional)
+- Development
 - Deployment Guide
 - Contributing & Coding Standards
 - Troubleshooting
 
 ## Overview
-This project is split into two parts:
-- Frontend (React SPA): Renders a portfolio site composed of modular sections and a reusable UI component library.
-- Backend (FastAPI): Provides REST endpoints under `/api` and persists data to MongoDB using Motor (async driver).
-
-By default, the frontend does not make API calls. The backend is prepared for extensions like contact form submissions or visit/status logging.
+This is a single-page React application that renders a beautiful, responsive portfolio website. The application features:
+- Modern React 19 with functional components and hooks
+- Responsive design with TailwindCSS
+- Reusable UI component library based on Radix UI
+- Smooth animations and interactions
+- Mobile-first responsive design
+- Fast development with hot reload
 
 ## Tech Stack
-- Frontend
-  - React 19, React Router 7
-  - TailwindCSS 3, Radix UI primitives, `lucide-react` icons
+- **Frontend Framework**
+  - React 19 with functional components and hooks
+  - React Router 7 for navigation
+- **Styling & UI**
+  - TailwindCSS 3 for utility-first styling
+  - Radix UI primitives for accessible components
+  - Lucide React for beautiful icons
+- **Build & Development**
   - CRACO (Create React App customization)
-  - Utilities: `react-hook-form`, `zod`, `sonner` toasts, `embla-carousel-react`
-- Backend
-  - FastAPI, Uvicorn
-  - MongoDB (Motor async driver), Pydantic v2 models
-  - CORS middleware, dotenv for env management
-- Tooling
-  - Frontend: ESLint, PostCSS, Tailwind
-  - Backend: pytest, black, isort, flake8, mypy
+  - Hot reload for fast development
+- **Utilities & Libraries**
+  - React Hook Form for form handling
+  - Zod for validation
+  - Sonner for toast notifications
+  - Embla Carousel for interactive carousels
+- **Code Quality**
+  - ESLint for code linting
+  - Prettier for code formatting
+  - PostCSS for CSS processing
 
 ## Project Structure
 ```
 AndroidPortfolio/
-  backend/
-    server.py            # FastAPI app, /api router, Mongo client
-    requirements.txt     # Python dependencies
-    .env                 # (create locally) Mongo and CORS settings
   frontend/
     src/
       pages/PortfolioPage.jsx         # Composes portfolio sections
@@ -58,179 +60,93 @@ AndroidPortfolio/
 ```
 
 ## Prerequisites
-- Node.js 18+ and Yarn 1.x
-- Python 3.11+
-- A running MongoDB instance (local or MongoDB Atlas)
+- Node.js 16+ 
+- Yarn package manager
 
 ## Quick Start
-Run backend (FastAPI) and frontend (React) locally.
+Get your portfolio running in just a few commands:
 
-Backend
 ```bash
-# From project root
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip setuptools wheel
-pip install -r backend/requirements.txt
+# Clone the repository
+git clone <repository-url>
+cd AndroidPortfolio
 
-# (Optional) Start MongoDB via Docker if you don't have Mongo locally
-# docker run -d --name mongo -p 27017:27017 mongo:7
-
-# Create backend/.env
-cat > backend/.env << 'EOF'
-MONGO_URL=mongodb://localhost:27017
-DB_NAME=android_portfolio
-CORS_ORIGINS=http://localhost:3000
-EOF
-
-# Start API
-python -m uvicorn backend.server:app --reload --port 8000
-# Test: curl http://localhost:8000/api/
-```
-
-Frontend
-```bash
-# In a separate terminal
-corepack enable && corepack prepare yarn@1.22.22 --activate
-cd frontend
-yarn
-yarn start
-# App: http://localhost:3000
-```
-
-## Backend Setup (FastAPI + MongoDB)
-1) Create `backend/.env` with your settings:
-```bash
-MONGO_URL=mongodb://localhost:27017
-DB_NAME=android_portfolio
-CORS_ORIGINS=http://localhost:3000
-```
-2) Install dependencies:
-```bash
-pip install -r backend/requirements.txt
-```
-3) Run the API server:
-```bash
-python -m uvicorn backend.server:app --reload --port 8000
-```
-4) Verify it’s up:
-```bash
-curl http://localhost:8000/api/
-```
-
-## Frontend Setup (React + CRACO + Tailwind)
-1) Install dependencies:
-```bash
-cd frontend
-yarn
-```
-2) Start the dev server:
-```bash
-yarn start
-```
-3) Visit the app at `http://localhost:3000`.
-
-Note: No proxy is configured in `craco.config.js`. Use full backend URLs (e.g., `http://localhost:8000/api/...`) or add an environment-based API base URL.
-
-## Start Locally (Detailed)
-1) Start MongoDB
-- Use a local MongoDB or run Docker:
-```bash
-docker run -d --name mongo -p 27017:27017 mongo:7
-```
-
-2) Backend (FastAPI)
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip setuptools wheel
-pip install -r backend/requirements.txt
-
-cat > backend/.env << 'EOF'
-MONGO_URL=mongodb://localhost:27017
-DB_NAME=android_portfolio
-CORS_ORIGINS=http://localhost:3000
-EOF
-
-python -m uvicorn backend.server:app --reload --port 8000
-```
-Verify:
-```bash
-curl http://localhost:8000/api/
-# { "message": "Hello World" }
-```
-
-3) Frontend (React)
-```bash
-corepack enable && corepack prepare yarn@1.22.22 --activate
+# Install dependencies
 cd frontend
 yarn install
+
+# Start the development server
 yarn start
 ```
-Open:
-- http://localhost:3000 (or set `PORT=3001 yarn start` if 3000 is busy)
 
-Notes
-- Ensure `CORS_ORIGINS` in backend/.env includes your frontend origin (e.g., http://localhost:3000 or http://localhost:3001).
-- The SPA loads static portfolio content by default; backend calls are optional until integrated.
+🎉 **That's it!** Your portfolio will be running at `http://localhost:3000`
 
-## API Reference
-Base URL: `http://localhost:8000/api`
+## Development
 
-- GET `/` – Health
-  - Response: `{ "message": "Hello World" }`
+### Available Scripts
+In the frontend directory, you can run:
 
-- POST `/status` – Create a status check record
-  - Body: `{ "client_name": "string" }`
-  - Response: `{ id, client_name, timestamp }`
+- **`yarn start`** - Runs the app in development mode at `http://localhost:3000`
+- **`yarn build`** - Builds the app for production to the `build` folder
+- **`yarn test`** - Launches the test runner in interactive watch mode
+- **`yarn lint`** - Runs ESLint to check code quality
+- **`yarn lint:fix`** - Automatically fixes ESLint issues
+- **`yarn format`** - Formats code using Prettier
 
-- GET `/status` – List status checks (up to 1000)
-  - Response: `[{ id, client_name, timestamp }, ...]`
+### Development Features
+- **Hot Reload** - Changes are reflected immediately
+- **ESLint Integration** - Code quality checks
+- **Prettier Formatting** - Consistent code style
+- **Tailwind CSS** - Utility-first styling
+- **Component Library** - Reusable UI components
 
-Example usage:
-```bash
-curl http://localhost:8000/api/
+## Detailed Setup Guide
 
-curl -X POST http://localhost:8000/api/status \
-  -H "Content-Type: application/json" \
-  -d '{"client_name":"portfolio-frontend"}'
+For a complete step-by-step setup guide, see [LOCAL_SETUP_GUIDE.md](./LOCAL_SETUP_GUIDE.md).
 
-curl http://localhost:8000/api/status
+## Portfolio Sections
+
+The application includes the following main sections:
+
+- **Header** - Navigation bar with smooth scrolling links
+- **Hero** - Introduction and call-to-action section
+- **About** - Personal information and background
+- **Skills** - Technical skills and expertise
+- **Experience** - Professional work history
+- **Projects** - Showcase of development projects
+- **Contact** - Contact information and form
+- **Footer** - Additional links and information
+
+### Customizing Content
+
+Portfolio content is managed through mock data files in `src/data/mock.js`. You can easily customize:
+
+- Personal information
+- Skills and technologies
+- Work experience
+- Project details
+- Contact information
+
+### Component Structure
+
+The application uses a modular component structure:
+
 ```
-
-## Frontend ↔ Backend Integration (optional)
-There are no API calls in the frontend yet. To integrate:
-1) Configure an API base URL (for CRA/CRACO): create `frontend/.env` with:
-```bash
-REACT_APP_API_BASE_URL=http://localhost:8000/api
-```
-2) Create a small client `src/lib/api.js`:
-```js
-import axios from 'axios';
-
-const api = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE_URL,
-});
-
-export const createStatus = (clientName) =>
-  api.post('/status', { client_name: clientName }).then(r => r.data);
-
-export const listStatuses = () =>
-  api.get('/status').then(r => r.data);
-
-export default api;
-```
-3) Call from a component (e.g., on mount in `Header` or `Hero`):
-```js
-import { useEffect } from 'react';
-import { createStatus } from '@/lib/api';
-
-export default function Header() {
-  useEffect(() => {
-    createStatus('portfolio-frontend').catch(() => {});
-  }, []);
-  return (/* ... */);
-}
+src/components/
+├── portfolio/          # Main portfolio sections
+│   ├── Header.jsx
+│   ├── Hero.jsx
+│   ├── About.jsx
+│   ├── Skills.jsx
+│   ├── Experience.jsx
+│   ├── Projects.jsx
+│   ├── Contact.jsx
+│   └── Footer.jsx
+└── ui/                # Reusable UI components
+    ├── button.jsx
+    ├── card.jsx
+    ├── badge.jsx
+    └── ... (30+ components)
 ```
 
 ## Deployment Guide
