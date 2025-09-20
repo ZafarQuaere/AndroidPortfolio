@@ -2,8 +2,8 @@
 
 export const personalInfo = {
   name: "ZAFAR IMAM",
-  title: "Senior Android Developer",
-  tagline: "Crafting exceptional mobile experiences with 10 years of Android expertise",
+  title: "Senior Software Engineer",
+  tagline: "Crafting exceptional mobile experiences with 10 years of experience in mobile app development",
   email: "zafarimam512@gmail.com",
   phone: "+91 78349 08329",
   linkedin: "https://www.linkedin.com/in/zafarimam77/",
@@ -14,21 +14,23 @@ export const personalInfo = {
 };
 
 export const aboutMe = {
-  summary: "Seasoned Android Developer with 10 years of expertise in creating and launching high-quality mobile applications. Skilled in designing robust project architectures using MVVM and MVP models, with a strong focus on building user-friendly Material Design-compliant interfaces.",
-  story: "My journey in mobile development began over a decade ago, and I've been passionate about creating innovative Android applications that solve real-world problems. Throughout my career, I've led development teams, mentored junior developers, and consistently delivered high-quality mobile solutions for enterprise and consumer applications.",
+  summary: "Seasoned Software Engineer with 10 years of expertise in creating and launching high-quality mobile applications. Skilled in designing robust project architectures using MVVM and MVP models, with a strong focus on building user-friendly cross-platform mobile solutions.",
+  story: "My journey in mobile development began over a decade ago, and I've been passionate about creating innovative mobile applications that solve real-world problems. Throughout my career, I've led development teams, mentored junior developers, and consistently delivered high-quality mobile solutions for enterprise and consumer applications across Android and Flutter platforms.",
   highlights: [
-    "10+ years of Android development experience",
+    "10+ years of mobile app development experience",
     "Led development teams and mentored junior developers",
     "Published multiple successful apps on Google Play Store",
-    "Expert in modern Android architecture patterns (MVVM, MVP)",
-    "Strong focus on Material Design and user experience"
+    "Expert in modern mobile architecture patterns (MVVM, MVP)",
+    "Strong focus on cross-platform development and user experience"
   ]
 };
 
 export const skills = {
   "Mobile Development": [
     "Android Application Development",
+    "Flutter Development",
     "Kotlin",
+    "Dart",
     "Core Java",
     "Android Jetpack Components",
     "Material Design"
@@ -107,14 +109,15 @@ export const experience = [
     location: "India",
     duration: "November 2017 - October 2021",
     type: "Full-time",
-    description: "Led development teams working on enterprise-level Android applications with focus on scalability and performance.",
+    description: "Led development teams working on enterprise-level Android and Flutter applications with focus on scalability and performance.",
     responsibilities: [
       "Led development teams working on enterprise-level Android applications",
+      "Developed cross-platform mobile applications using Flutter and Dart",
       "Implemented architecture patterns and best practices across multiple projects",
       "Collaborated with cross-functional teams to deliver high-quality mobile solutions",
       "Optimized app performance and maintained CI/CD pipelines"
     ],
-    technologies: ["Android", "Kotlin", "Java", "MVP", "RxJava", "Retrofit", "Git"]
+    technologies: ["Android", "Flutter", "Kotlin", "Dart", "Java", "MVP", "RxJava", "Retrofit", "Git"]
   },
   {
     id: 3,
